@@ -1,5 +1,3 @@
-import java.util.Scanner;
-
 class Car {
     String make;
     String model;
@@ -15,28 +13,26 @@ class Car {
     }
 
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
+        // Create a supercar object
+        Car supercar = new Car("Ferrari", "LaFerrari", (short) 2023, 3000000);
 
-        // Get user input for a car
-        System.out.println("Enter make:");
-        String make = scanner.nextLine();
-        System.out.println("Enter model:");
-        String model = scanner.nextLine();
-        System.out.println("Enter year:");
-        short year = scanner.nextShort();
-        System.out.println("Enter price:");
-        int price = scanner.nextInt();
+        // Create a sports car object
+        Car sportsCar = new Car("Porsche", "911", (short) 2023, 150000);
 
-        // Create a Car object
-        Car car = new Car(make, model, year, price);
+        // Display the details of the supercar
+        System.out.println("Supercar Details:");
+        displayCarDetails(supercar);
 
-        // Display the details of the car
-        System.out.println("\nCar Details:");
+        // Display the details of the sports car
+        System.out.println("\nSports Car Details:");
+        displayCarDetails(sportsCar);
+    }
+
+    // Method to display car details
+    private static void displayCarDetails(Car car) {
         System.out.println("Make: " + car.make);
         System.out.println("Model: " + car.model);
         System.out.println("Year: " + car.year);
         System.out.println("Price: $" + car.price);
-
-        scanner.close();
     }
 }
